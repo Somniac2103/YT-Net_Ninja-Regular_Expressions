@@ -1,0 +1,54 @@
+REGULAR EXPRESSIONS TUTORIAL
+
+*case sensitive
+
+Exact match
+/Bary/
+>Barry
+
+Character set match
+/[BL]arry/
+>Barry
+>Larry
+
+Exclude Range match
+/[^X]arry/
+>Barry
+>Larry
+?Xarry
+
+Ranges match
+/[a-z]arry/
+/[a-zA-Z]/
+
+Multiple Ranges
+/[0-9]+/
+*once til infinite
+
+/[0-9]{5}/
+*needs 5 numbers
+
+/[0-9]{5,10}/
+*needs 5 to max 10 numbers
+
+/[0-9]{5,}
+*needs minimum 5 numbers without upper limit
+
+Metacharacters
+\ escapes the exact meaning into meta
+
+\d *matches any digit similar [0-9]
+\w *matches any word character(a-z,A-Z, 0-9, _'s)
+\s *matches any whitespace character (spaces, tabs etc)
+\t *match a tab character only
+
+Special characters
+doesn't work as normal
+
+'+' *See it once or more
+'\' *Escapes character
+'[]' character set
+'[^]' negate symbol in characterset
+'?' zero or one quantifier(Maskes a preceding char optional)
+'.' Any Character whatsoever (except the newline character)
+'*' The 0-ormore quantifier (a bit like +)
