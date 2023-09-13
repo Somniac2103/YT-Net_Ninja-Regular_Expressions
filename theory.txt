@@ -2,26 +2,26 @@ REGULAR EXPRESSIONS TUTORIAL
 
 *case sensitive
 
-Exact match
+---Exact match---
 /Bary/
 >Barry
 
-Character set match
+---Character set match---
 /[BL]arry/
 >Barry
 >Larry
 
-Exclude Range match
+---Exclude Range match---
 /[^X]arry/
 >Barry
 >Larry
 ?Xarry
 
-Ranges match
+---Ranges match---
 /[a-z]arry/
 /[a-zA-Z]/
 
-Multiple Ranges
+---Multiple Ranges---
 /[0-9]+/
 *once til infinite
 
@@ -34,7 +34,7 @@ Multiple Ranges
 /[0-9]{5,}
 *needs minimum 5 numbers without upper limit
 
-Metacharacters
+---Metacharacters---
 \ escapes the exact meaning into meta
 
 \d *matches any digit similar [0-9]
@@ -42,7 +42,7 @@ Metacharacters
 \s *matches any whitespace character (spaces, tabs etc)
 \t *match a tab character only
 
-Special characters
+---Special characters---
 doesn't work as normal
 
 '+' *See it once or more
@@ -52,3 +52,19 @@ doesn't work as normal
 '?' zero or one quantifier(Maskes a preceding char optional)
 '.' Any Character whatsoever (except the newline character)
 '*' The 0-ormore quantifier (a bit like +)
+
+---Start and ending patterns---
+
+^ start of a pattern when outside is the start *when inside it mean negate
+$ end of a pattern.
+
+^[a-z]{5}$ *must be exactly 5 letters with nothing in fron or behind
+^[a-z]{5} *must start with 5 letters but the rest doesn't Metacharacters
+[a-z]{5}$ *doesn't matter as long as the last 5 characters are letters
+
+---Alternate Characters---
+use | works like a or operator
+use () works to groups together
+/t|p/ *will accept 't' or 'p'
+/(t|p)yre/ *will accept 'tyre' or 'pyre'
+
